@@ -82,7 +82,6 @@ export async function pluginConfig(options: ExtendedOptions) {
   const { presets } = options;
   const framework = await presets.apply('framework', '', options);
   const frameworkName: string = typeof framework === 'object' ? framework.name : framework;
-  const svelteOptions: Record<string, any> = await presets.apply('svelteOptions', {}, options);
 
   const plugins = [
     codeGeneratorPlugin(options),
