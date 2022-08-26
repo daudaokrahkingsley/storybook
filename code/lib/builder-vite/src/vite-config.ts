@@ -14,6 +14,7 @@ import { stringifyProcessEnvs } from './envs';
 import { injectExportOrderPlugin } from './inject-export-order-plugin';
 import { mdxPlugin } from './plugins/mdx-plugin';
 import { noFouc } from './plugins/no-fouc';
+import { stripStoryHMRBoundary } from './plugins/strip-story-hmr-boundaries';
 import type { ExtendedOptions, EnvsRaw } from './types';
 
 export type PluginConfigType = 'build' | 'development';
@@ -89,6 +90,7 @@ export async function pluginConfig(options: ExtendedOptions) {
     mdxPlugin(options),
     noFouc(),
     injectExportOrderPlugin,
+    stripStoryHMRBoundary(),
   ] as PluginOption[];
 
   // We need the react plugin here to support MDX in non-react projects.
