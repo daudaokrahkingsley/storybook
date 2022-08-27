@@ -94,7 +94,7 @@ export async function pluginConfig(options: ExtendedOptions) {
 
   // We need the react plugin here to support MDX in non-react projects.
   if (frameworkName !== '@storybook/react-vite') {
-    plugins.push(viteReact());
+    plugins.push(viteReact({ exclude: [/\.stories\.([tj])sx?$/, /node_modules/, /\.([tj])sx?$/] }));
   }
 
   if (frameworkName === 'preact') {
