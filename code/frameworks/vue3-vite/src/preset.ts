@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import type { StorybookConfig } from '@storybook/builder-vite';
+import { vueDocgen } from './plugins/vue-docgen';
 
 export const addons: StorybookConfig['addons'] = ['@storybook/vue3'];
 
@@ -21,22 +22,7 @@ export function readPackageJson(): Record<string, any> | false {
 export const viteFinal: StorybookConfig['viteFinal'] = async (config, { presets }) => {
   const { plugins = [] } = config;
 
-  try {
-    // eslint-disable-next-line global-require
-    const vuePlugin = require('@vitejs/plugin-vue');
-    plugins.push(vuePlugin());
-    const { vueDocgen } = await import('./plugins/vue-docgen');
-    plugins.push(vueDocgen());
-  } catch (err) {
-    if ((err as NodeJS.ErrnoException).code === 'MODULE_NOT_FOUND') {
-      throw new Error(
-        '@storybook/builder-vite requires @vitejs/plugin-vue to be installed ' +
-          'when using @storybook/vue or @storybook/vue3.' +
-          '  Please install it and start storybook again.'
-      );
-    }
-    throw err;
-  }
+  plugins.push(vueDocgen());
 
   const updated = {
     ...config,
