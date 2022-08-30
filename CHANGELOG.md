@@ -31,18 +31,18 @@
 
 -   Preview: Rename Storybook DOM root IDs [#10638](https://github.com/storybooks/storybook/pull/10638)
 
-#### Features
+  #### Features
 
 -   Interactions: Add `step` function and support multiple levels of nesting [#18555](https://github.com/storybooks/storybook/pull/18555)
 
-#### Bug Fixes
+  #### Bug Fixes
 
 -   Addon-docs: Fix canvas support expand code for non-story [#18808](https://github.com/storybooks/storybook/pull/18808)
 -   Components: Avoid including line numbers when copying the code [#18725](https://github.com/storybooks/storybook/pull/18725)
 -   Vue: Fix enum check in extractArgTypes [#18959](https://github.com/storybooks/storybook/pull/18959)
 -   Core: Fix frameworkOptions preset [#18979](https://github.com/storybooks/storybook/pull/18979)
 
-#### Maintenance
+ #### Maintenance
 
 -   Addon-a11y: Remove achromatomaly color filter [#18852](https://github.com/storybooks/storybook/pull/18852)
 -   Build: Use ts-up to build core-webpack [#18912](https://github.com/storybooks/storybook/pull/18912)
@@ -57,13 +57,13 @@
 -   CLI: determine whether to add interactive stories from `renderer` rather than `framework` [#18968](https://github.com/storybooks/storybook/pull/18968)
 -   CLI: Auto-accept migrations when running `generate-repros-next` [#18969](https://github.com/storybooks/storybook/pull/18969)
 
-## 7.0.0-alpha.23 (August 18, 2022)
+  ## 7.0.0-alpha.23 (August 18, 2022)
 
-#### Features
+  #### Features
 
 -   UI: Polish canvas and sidebar for 7.0 [#18894](https://github.com/storybooks/storybook/pull/18894)
 
-#### Maintenance
+ #### Maintenance
 
 -   Sandbox: Add ability to run from local repro [#18950](https://github.com/storybooks/storybook/pull/18950)
 -   Repros: Add ability to generate repros using local registry [#18948](https://github.com/storybooks/storybook/pull/18948)
